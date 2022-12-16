@@ -9,12 +9,12 @@ public class Receipt {
     private static Date date = new Date();
     private Basket basket = null;
     private Cashier cashier = null;
-    private String bill = "CASH RECEIPT\n";
+    private String bill = "              CASH RECEIPT\n";
 
     public Receipt(Basket basket) {
         this.basket = basket;
         cashier = CashierFactory.getCashier();
-        bill += cashier.getAddressStore() + "\n CASHIER:" + cashier.getId() + "\n";
+        bill += "              " + cashier.getAddressStore() + "\n              CASHIER:" + cashier.getId() + "\n";
     }
 
     public String getDate() {
@@ -28,12 +28,11 @@ public class Receipt {
     }
 
     public String construct() {
-        bill += "DATE: " + getDate() + "\nTIME: " + getTime() + "\n";
-        bill += String.format("%4s %10s %7s %7s\n\n", "QTY", "DESCRIPTION", "PRICE", "TOTAL");
-        System.out.println(basket.getBasketList());
+        bill += "   DATE: " + getDate() + "      TIME: " + getTime() + "\n\n";
+        bill += String.format("%4s %-22s %7s %7s\n\n", "QTY", "DESCRIPTION", "PRICE", "TOTAL");
         double total = basket.costBasket();
         bill += basket.printBill();
-        bill += String.format("TOTAL: %7.2f", total);
+        bill += String.format("  TOTAL:   %32.2f", total);
         return bill;
     }
 

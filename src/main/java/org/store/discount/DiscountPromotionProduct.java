@@ -12,12 +12,27 @@ public class DiscountPromotionProduct extends DiscountDecoration{
         this.product = product;
     }
     @Override
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return product.getName() + " -10% discount";
     }
 
     @Override
-    public double getPrice() {
-        return product.getPrice() * 0.9;
+    public int getId() {
+        return product.getId();
     }
+    @Override
+    public double getPrice() {
+        return product.getPrice();
+    }
+    @Override
+    public double getTax() {
+        return product.getTax() - product.getPrice() * 0.1;
+    }
+
+    @Override
+    public boolean isPromotion() {
+        return product.isPromotion();
+    }
+
+
 }

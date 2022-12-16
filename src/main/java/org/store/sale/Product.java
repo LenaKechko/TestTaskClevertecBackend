@@ -5,6 +5,7 @@ public class Product extends AbstractProduct {
     private String name;
     private double price;
 
+    private double tax = 0.0;
     private boolean promotion = false;
 
     public Product() {
@@ -52,4 +53,7 @@ public class Product extends AbstractProduct {
         return price;
     }
 
+    public double getTax() {
+        return tax;
+    }
 }
