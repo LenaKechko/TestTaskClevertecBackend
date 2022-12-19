@@ -2,6 +2,9 @@ package org.store.sale;
 
 import org.store.customer.Basket;
 
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -36,6 +39,14 @@ public class Receipt {
         return bill;
     }
 
-
+    public static void printReceipt(String bill) {
+        try (FileWriter output = new FileWriter("Result Bill.txt", false)) {
+            output.write(bill);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

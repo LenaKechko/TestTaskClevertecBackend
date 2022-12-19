@@ -10,6 +10,6 @@ public abstract class CashierFactory {
             new Cashier(946, "Elena Fedotova", "Mazurova, 17"));
 
     public static Cashier getCashier() {
-        return cashierList.get((int) Math.random() * cashierList.size());
+        return cashierList.get((int) (Math.random() * cashierList.size()));
     }
 }
