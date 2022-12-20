@@ -26,7 +26,6 @@ public class DiscountForCard extends DiscountDecoration {
         return product.isPromotion();
     }
 
-
     @Override
     public double getPrice() {
         return product.getPrice();

@@ -1,7 +1,7 @@
               CASH RECEIPT
-              Mazurova, 17
-              CASHIER:946
-   DATE: 20/12/2022      TIME: 22:46:39
+              Sovetskaya, 4
+              CASHIER:421
+   DATE: 20/12/2022      TIME: 23:58:25
 
  QTY DESCRIPTION              PRICE   TOTAL
 

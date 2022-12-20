@@ -1,16 +1,12 @@
 package org.store.customer;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.store.sale.Product;
 import org.store.sale.ProductFactory;
-import org.store.services.ProductService;
 
 import java.util.List;
 import java.util.Map;
 
 public class BasketBuilder implements Builder {
-    @Autowired
-    private ProductService productService;
     private Basket basket = new Basket();
 
 
