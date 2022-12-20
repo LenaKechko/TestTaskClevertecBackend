@@ -1,12 +1,22 @@
 package org.store.sale;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "product")
 public class Product extends AbstractProduct {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "price")
     private double price;
+    @Column(name = "promotion")
+    private boolean promotion = false;
 
     private double tax = 0.0;
-    private boolean promotion = false;
 
     public Product() {
 
@@ -43,6 +53,10 @@ public class Product extends AbstractProduct {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public void setPromotion(boolean promotion) {
+        this.promotion = promotion;
     }
 
     public boolean isPromotion() {
