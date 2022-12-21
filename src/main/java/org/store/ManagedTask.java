@@ -24,6 +24,10 @@ public class ManagedTask {
             Customer customer = new Customer(numberDiscountCard);
             customer.addProduct(shoppingList);
             Basket basket = customer.counstructBasket();
+            if (basket.getBasketList().isEmpty()) {
+                System.out.println("Basket is empty");
+                return;
+            }
             Receipt bill = new Receipt(basket);
             Receipt.printReceipt(bill.construct());
         }

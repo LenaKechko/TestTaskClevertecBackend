@@ -11,6 +11,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 //@Component
 public abstract class ProductFactory {
@@ -66,7 +67,7 @@ public abstract class ProductFactory {
                     .filter(product -> product.getId() == id)
                     .findFirst()
                     .get();
-        } catch (NullPointerException exception) {
+        } catch (NullPointerException | NoSuchElementException e) {
             return null;
         }
     }
