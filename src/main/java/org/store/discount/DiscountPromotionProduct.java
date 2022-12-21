@@ -34,5 +34,9 @@ public class DiscountPromotionProduct extends DiscountDecoration{
         return product.isPromotion();
     }
 
+    @Override
+    public double getCost(int quantity) {
+        return product.getPrice() * quantity;
+    }
 
 }

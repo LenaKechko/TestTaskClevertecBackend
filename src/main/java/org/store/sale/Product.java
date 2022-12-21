@@ -63,6 +63,9 @@ public class Product extends AbstractProduct {
         return promotion;
     }
 
+    public void setTax() {
+        this.tax = tax;
+    }
     public double getPrice() {
         return price;
     }
@@ -70,4 +73,5 @@ public class Product extends AbstractProduct {
     public double getTax() {
         return tax;
     }
+
 }

@@ -37,5 +37,11 @@ public class DiscountForCard extends DiscountDecoration {
         return product.getTax() - product.getPrice() * 0.05;
     }
 
+    @Override
+    public double getCost(int quantity) {
+        return product.getPrice() * quantity;
+    }
+
+
 
 }

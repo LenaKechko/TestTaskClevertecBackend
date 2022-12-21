@@ -11,6 +11,8 @@ import java.util.Map;
 public class Basket {
     private Map<Product, Integer> basketList = new HashMap<>();
     private String forBill = "";
+    private double total = 0.0;
+    private double totalTax = 0.0;
 
     private DiscountCard discountCard = null;
 
@@ -26,33 +28,37 @@ public class Basket {
         return forBill;
     }
 
-    public double costBasket(){
-        double total = 0.0;
-        double totalTax = 0.0;
+    public void costBasket(){
         for (AbstractProduct product : basketList.keySet()) {
             int quantity = basketList.get(product);
-            if (product.isPromotion() && basketList.get(product) > 5){
+            if (product.isPromotion() && quantity > 5){
                 product = new DiscountPromotionProduct(product);
             }
             if (!product.isPromotion() && discountCard != null){
                 product = new DiscountForCard(product);
             }
-            double totalProduct = product.getPrice() * quantity;
+            double totalProduct = product.getCost(quantity);
             this.forBill += String.format("%4d %-22s %7.2f %7.2f\n",
                     quantity, product.getName(), product.getPrice(), totalProduct);
-            if (product.getTax() != 0.0) {
+            if (product.getTax() != 0.0)  {
                 double taxProduct = product.getTax() * quantity;
                 totalTax += taxProduct;
                 this.forBill += String.format("%43.2f\n", taxProduct);
             }
             total += totalProduct;
         }
-        for (int i = 0; i < 43; i++)
-            this.forBill += "-";
-        this.forBill += String.format("\n  Taxable: %32.2f\n", total);
-        this.forBill += String.format("  Tax:     %32.2f\n", totalTax);
-        total += totalTax;
+    }
+
+    public double getTotal(){
         return total;
+    }
+
+    public double getTotalTax(){
+        return totalTax;
+    }
+
+    public double getFinalTotal() {
+        return total + totalTax;
     }
 
     public DiscountCard getNumberDiscountCard() {

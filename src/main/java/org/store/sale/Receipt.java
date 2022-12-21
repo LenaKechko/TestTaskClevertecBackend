@@ -33,9 +33,13 @@ public class Receipt {
     public String construct() {
         bill += "   DATE: " + getDate() + "      TIME: " + getTime() + "\n\n";
         bill += String.format("%4s %-22s %7s %7s\n\n", "QTY", "DESCRIPTION", "PRICE", "TOTAL");
-        double total = basket.costBasket();
+        basket.costBasket();
         bill += basket.printBill();
-        bill += String.format("  TOTAL:   %32.2f", total);
+        for (int i = 0; i < 43; i++)
+            bill += "-";
+        bill += String.format("\n  Taxable: %32.2f\n", basket.getTotal());
+        bill += String.format("  Tax:     %32.2f\n", basket.getTotalTax());
+        bill += String.format("  TOTAL:   %32.2f", basket.getFinalTotal());
         return bill;
     }
 

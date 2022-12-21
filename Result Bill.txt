@@ -1,16 +1,16 @@
               CASH RECEIPT
-              Sovetskaya, 4
-              CASHIER:421
-   DATE: 20/12/2022      TIME: 23:58:25
+              Kirova, 1
+              CASHIER:357
+   DATE: 21/12/2022      TIME: 15:31:37
 
  QTY DESCRIPTION              PRICE   TOTAL
 
-   1 bread -5% discount        1,01    1,01
-                                      -0,05
-   2 milk -5% discount         1,26    2,52
-                                      -0,13
    6 butter -10% discount      2,50   15,00
                                       -1,50
+   2 milk -5% discount         1,26    2,52
+                                      -0,13
+   1 bread -5% discount        1,01    1,01
+                                      -0,05
 -------------------------------------------
   Taxable:                            18,53
   Tax:                                -1,68

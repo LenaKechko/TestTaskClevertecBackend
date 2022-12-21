@@ -1,0 +1,8 @@
+1|milk|1.26
+2|bread|1.01
+3|butter|2.5|true
+4|salt|0.9
+5|meat|5.7|true
+6|sugar|2.3|true
+7|sausage|4.38
+8|egg|2.89

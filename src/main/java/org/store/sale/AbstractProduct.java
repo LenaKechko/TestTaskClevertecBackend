@@ -22,9 +22,14 @@ public abstract class AbstractProduct {
         return name;
     }
 
+    public double getCost(int quantity) {
+        return price * quantity;
+    }
+
     public int getId() {
         return id;
     }
 
     public abstract double getTax();
+
 }
