@@ -12,9 +12,9 @@ public class ManagedTask {
     public ManagedTask(String requestCustomer) {
         if (checkInputData(requestCustomer)) {
             int numberDiscountCard = -1;
-            if (requestCustomer.contains("Card")) {
-                numberDiscountCard = Integer.parseInt(requestCustomer.split(" Card-")[1]);
-                requestCustomer = requestCustomer.split(" Card-")[0];
+            if (requestCustomer.contains("card")) {
+                numberDiscountCard = Integer.parseInt(requestCustomer.split(" card-")[1]);
+                requestCustomer = requestCustomer.split(" card-")[0];
             }
             Map<Integer, Integer> shoppingList =
                     Stream.of(requestCustomer.split(" "))

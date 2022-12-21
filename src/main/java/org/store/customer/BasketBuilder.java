@@ -5,6 +5,7 @@ import org.store.sale.ProductFactory;
 
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 public class BasketBuilder implements Builder {
     private Basket basket = new Basket();
@@ -29,10 +30,15 @@ public class BasketBuilder implements Builder {
     public void addDiscountCard(int numberDiscountCard) {
         if (numberDiscountCard > -1) {
             List<DiscountCard> discountCardList = DiscountCardFactory.getCardList();
-            DiscountCard discountCard = discountCardList.stream()
-                    .filter(value -> value.getNumber() == numberDiscountCard)
-                    .findFirst()
-                    .get();
+            DiscountCard discountCard = null;
+            try {
+                discountCard = discountCardList.stream()
+                        .filter(value -> value.getNumber() == numberDiscountCard)
+                        .findFirst()
+                        .get();
+            } catch(NoSuchElementException e) {
+                System.out.println("Discount card isn't correct");
+            }
             if (discountCard != null)
                 basket.setDiscountCard(discountCard);
         }

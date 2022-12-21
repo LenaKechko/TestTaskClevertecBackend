@@ -1,15 +1,9 @@
 package org.store.customer;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.store.services.DiscountCardService;
-
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-//@Controller
 public abstract class DiscountCardFactory {
     /*работа без файла и бд*/
 //        private static List<DiscountCard> cardList = Arrays.asList(
@@ -35,17 +29,6 @@ public abstract class DiscountCardFactory {
             e.printStackTrace();
         }
     }
-
-//    private static List<DiscountCard> cardList = new ArrayList<>();
-//
-//    @Autowired
-//    private static DiscountCardService discountCardService;
-//
-//    static {
-//        discountCardService.findAll();
-//        cardList.addAll(discountCardService.findAll());
-//        Arrays.stream(new List[]{discountCardService.findAll()}).forEach(System.out::println);
-//    }
 
     public static List<DiscountCard> getCardList() {
         return cardList;

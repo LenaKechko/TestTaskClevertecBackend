@@ -1,10 +1,7 @@
 package org.store.sale;
 
-import org.store.customer.DiscountCard;
-
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public abstract class CashierFactory {

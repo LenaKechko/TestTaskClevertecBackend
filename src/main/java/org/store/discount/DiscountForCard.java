@@ -1,7 +1,6 @@
 package org.store.discount;
 
 import org.store.sale.AbstractProduct;
-import org.store.sale.ProductFactory;
 
 public class DiscountForCard extends DiscountDecoration {
     AbstractProduct product;

@@ -1,8 +1,6 @@
 package org.store.discount;
 
 import org.store.sale.AbstractProduct;
-import org.store.sale.Product;
-import org.store.sale.ProductFactory;
 
 public class DiscountPromotionProduct extends DiscountDecoration{
     AbstractProduct product;

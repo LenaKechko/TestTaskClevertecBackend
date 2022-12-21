@@ -74,4 +74,8 @@ public class Product extends AbstractProduct {
         return tax;
     }
 
+    public double getCost(int quantity) {
+        return price * quantity;
+    }
+
 }

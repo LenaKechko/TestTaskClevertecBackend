@@ -1,7 +1,7 @@
               CASH RECEIPT
-              Kirova, 1
-              CASHIER:357
-   DATE: 21/12/2022      TIME: 16:12:39
+              Sovetskaya, 4
+              CASHIER:421
+   DATE: 21/12/2022      TIME: 20:12:46
 
  QTY DESCRIPTION              PRICE   TOTAL
 
